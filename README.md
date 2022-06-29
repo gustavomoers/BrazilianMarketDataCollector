@@ -13,7 +13,7 @@
 
  I recommend first to download this whole repository and start with the file 00-RUN_ONLY_FIRST_TIME---Downloading_all_data_CVM.ipynb, you only need to run this first time, since it will download all the data available from CVM.
  
- Then you should also run the get_prices_AV.ipynb file, which is on PRICES folder, this file will get the price history from AlphaVantage API, you should create your onw account and use your own API for this. This free API has a limit of requests per minute, so it takes a while to download all data, but you should only run this file one time, I am looking into other APIs to improve this code.
+ Then you should also run the get_prices_AV.ipynb file, which is on PRICES folder, this file will get the price history from AlphaVantage API, you should create your onw account and use your own API key for this. This free API has a limit of requests per minute, so it takes a while to download all data, but you should only run this file one time, I am looking into other APIs to improve this code.
 
 
 
@@ -216,4 +216,4 @@
  
  
  
- This is it, if you have any questions please contact me, hope this helps you on your projects!
+ This is it, if you want to see an example of the final dataframe you can check the Final_DataFrame_example.xlsx file. If you have any questions please contact me, hope this helps you on your projects!
