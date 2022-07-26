@@ -2,6 +2,7 @@
  
  The purpose of this API is to gather brazilian companies financial data from CVM, B3, yahoo-query and AlphaVantage, clean it, assemble and create a dataframe with all available information on these companies to use as a data source to the [FinanceDash Project](https://github.com/gustavomoers/FinanceDash).
  It might have some flaws on this code and it was rather hard to clean and assemble the data from all theses sources, and currently I do not have much time to work on this project but I am realeasing it so you can try it out!
+ Of course, this isn't a deploy code, I am still improving the code and looking for better and faster ways of achieving these results, so it is still on jupyter notebook but I intend to create a better deploy code on Python!
 
  The data is collected from:
 
