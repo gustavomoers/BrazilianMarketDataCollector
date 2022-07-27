@@ -1013,38 +1013,3 @@ medias_capital.to_pickle('clean_data/final_data/medias_capital.pkl')
 medias_capital.to_pickle('BACKUPS/medias/medias_capital%s.pkl'%today)
 
 
-# ### SALES TO CAPITAL RATIO
-
-# In[ ]:
-
-
-## SCR do segmento no Brasil
-
-scmean = pd.read_pickle('clean_data/final_data/medias_segmento.pkl')
-
-scr_segmento_mean = scmean['Receitas/Capital_Inv']
-
-ttm['SCR segmento BR'] = np.nan
-ttm['SCR segmento BR'] = np.select([ttm['SCR segmento BR'].isna()],[scr_segmento_mean[ttm['SEGMENTO']]],
-                                  ttm['SCR segmento BR'])
-
-## SCR do setor no Brasil
-
-scmean_setor = pd.read_pickle('clean_data/final_data/medias_setor.pkl')
-
-scr_setor_mean = scmean_setor['Receitas/Capital_Inv']
-
-ttm['SCR setor BR'] = np.nan
-ttm['SCR setor BR'] = np.select([ttm['SCR setor BR'].isna()],[scr_setor_mean[ttm['SETOR']]],
-                                  ttm['SCR setor BR'])
-
-## SCR global
-
-scr_global = pd.read_excel("VALUATION/capexGlobal2021_damodaran.xlsx")
-
-scr_global_mean = scr_global['Sales/Capital']
-
-ttm['SCR global'] = np.nan
-ttm['SCR global'] = np.select([ttm['SCR global'].isna()],[scr_global_mean[ttm['DAMODARAN_GROUP']]],
-                                  ttm['SCR global'])
-
