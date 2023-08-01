@@ -26,7 +26,7 @@ today = datetime.datetime.today().strftime('%Y-%m-%d')
 nomes = ['BPA_con', 'BPA_ind', 'BPP_con', 'BPP_ind', 'DFC_MI_con', 'DFC_MI_ind', 'DRE_con', 'DRE_ind', 'DVA_con', 'DVA_ind', 'DFC_MD_con', 'DFC_MD_ind']
 for nome in nomes:
     arquivo = pd.DataFrame()
-    for ano in range(2017,int(this_year)):
+    for ano in range(2017,int(this_year)+1):
         arquivo = pd.concat([arquivo, pd.read_csv(f'raw_data_cvm/dfp/DFP/dfp_cia_aberta_{nome}_{ano}.csv', sep=';', decimal=',', encoding='ISO-8859-1')])
     
     arquivo['VL_CONTA'] = arquivo['VL_CONTA'].apply(lambda x: float(x))
@@ -42,7 +42,7 @@ for nome in nomes:
 nomes = ['DMPL_con','DMPL_ind']
 for nome in nomes:
     arquivo = pd.DataFrame()
-    for ano in range(2017,int(this_year)):
+    for ano in range(2017,int(this_year)+1):
         arquivo = pd.concat([arquivo, pd.read_csv(f'raw_data_cvm/dfp/DFP/dfp_cia_aberta_{nome}_{ano}.csv', sep=';', decimal=',', encoding='ISO-8859-1')])
     
     arquivo['COLUNA_DF'] =np.select([arquivo['COLUNA_DF'].isna()],['PL CON'],arquivo['COLUNA_DF'])
@@ -105,7 +105,7 @@ for nome in nomes:
 nomes = ['posicao_acionaria','distribuicao_capital']
 for nome in nomes:
     arquivo = pd.DataFrame()
-    for ano in range(2010,int(this_year)+1):
+    for ano in [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2023]:
         arquivo = pd.concat([arquivo, pd.read_csv(f'raw_data_cvm/fre/FRE/fre_cia_aberta_{nome}_{ano}.csv', sep=';', decimal=',', encoding='ISO-8859-1')])
     arquivo.to_pickle(f'merged_data_cvm/new_data/FRE/fre_cia_aberta_{nome}_tudo.pkl')
 
