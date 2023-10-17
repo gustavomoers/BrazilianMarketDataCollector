@@ -1,8 +1,7 @@
-# BrazilianMarketDataAPI
+# BrazilianMarketDataCollector
  
- The purpose of this API is to gather brazilian companies financial data from CVM, B3, yahoo-query and AlphaVantage, clean it, assemble and create a dataframe with all available information on these companies to use as a data source to the [FinanceDash Project](https://github.com/gustavomoers/FinanceDash).
- It might have some flaws on this code and it was rather hard to clean and assemble the data from all theses sources, and currently I do not have much time to work on this project but I am realeasing it so you can try it out!
- 
+ The purpose of this collector is to gather brazilian companies financial data from CVM, B3, yahoo-query and AlphaVantage, clean it, assemble and create a dataframe with all available information on these companies to use as a data source to the [FinanceDash Project](https://github.com/gustavomoers/FinanceDash).
+
  
  Unfortunatly, 03-Raw_Data_B3.py is not working right now, this is because B3 changed their host website and discontinued their old one, thus is not working and I did not implement a scrapper for the new website yet. So keep in mind that the dividends and total shares data are outdated.
 
